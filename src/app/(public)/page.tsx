@@ -181,6 +181,15 @@ export default async function HomePage({ searchParams }: PageProps<"/">) {
       <section className="relative overflow-hidden dark:bg-[#0e1a3a]">
         <HeroCurves />
         <div className="relative mx-auto max-w-md px-4 pb-2 pt-6 sm:px-6 sm:pt-8">
+          <div className="mb-5">
+            <h1 className="text-3xl font-extrabold leading-tight tracking-tight text-[var(--foreground)] sm:text-4xl">
+              Voyager, tout simplement.
+            </h1>
+            <p className="mt-2 text-sm font-medium text-[var(--muted)] sm:text-base">
+              Payez Mobile Money — votre billet arrive par SMS, même sans connexion.
+            </p>
+          </div>
+
           <div className="mb-3 rounded-2xl bg-brand-400 px-4 py-3 text-sm font-bold text-white shadow-sm">
             🔥 -20&nbsp;% sur votre 1er trajet reserve en ligne
           </div>
