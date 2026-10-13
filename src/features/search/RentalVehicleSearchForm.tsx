@@ -131,12 +131,12 @@ export function RentalVehicleSearchForm({
 
   return (
     <form onSubmit={submit} noValidate aria-label="Rechercher un vehicule de location">
-      <div className="grid gap-3 md:grid-cols-[1.2fr_1fr_1fr_auto] md:items-end">
+      <div className="grid gap-3">
         {pickupPlaceField}
         {pickupDateField}
         {returnDateField}
 
-        <Button type="submit" size="lg" icon={<IconSearch className="h-4 w-4" />} className="w-full md:w-auto">
+        <Button type="submit" size="lg" icon={<IconSearch className="h-4 w-4" />} className="w-full">
           Rechercher
         </Button>
       </div>

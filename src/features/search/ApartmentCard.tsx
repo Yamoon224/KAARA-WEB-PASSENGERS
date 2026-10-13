@@ -18,9 +18,9 @@ export function ApartmentCard({ apartment }: { apartment: Apartment }) {
 
   return (
     <Card interactive>
-      <div className="grid gap-0 sm:grid-cols-[10rem_1fr]">
+      <div className="grid gap-0">
         <div
-          className="relative flex h-32 items-end overflow-hidden p-3 text-white sm:h-auto"
+          className="relative flex h-32 items-end overflow-hidden p-3 text-white"
           style={{ backgroundImage: apartment.cover_photo_url ? undefined : GRADIENT }}
         >
           {apartment.cover_photo_url ? (

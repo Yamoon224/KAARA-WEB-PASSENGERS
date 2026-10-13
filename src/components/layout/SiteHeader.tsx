@@ -79,7 +79,7 @@ export function SiteHeader() {
   return (
     <>
       <header className="no-print sticky top-0 z-30 border-b border-[var(--hairline)] bg-[var(--surface)]">
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
+        <div className="flex h-16 items-center justify-between gap-3 px-4 sm:px-6">
           <Link href="/" className="rounded-sm" aria-label="Kaara, accueil">
             <Logo tone="brand" />
           </Link>
@@ -138,20 +138,24 @@ export function SiteHeader() {
 
       {/* Petit popover des services, ancre sous le bouton burger : plus un
           tiroir plein ecran, juste la liste "Nos services". Le reste
-          (connexion, favoris) reste accessible directement dans l'en-tete. */}
+          (connexion, favoris) reste accessible directement dans l'en-tete.
+          `absolute` (pas `fixed`) : se positionne par rapport a la colonne
+          mobile de PublicLayout (`relative`), pas par rapport a la fenetre -
+          sur grand ecran, le popover reste colle au bouton burger plutot que
+          de se plaquer au bord reel du navigateur. */}
       {isMenuOpen ? (
         <button
           type="button"
           aria-label="Fermer le menu"
           onClick={closeMenu}
-          className="fixed inset-0 z-40 cursor-default"
+          className="absolute inset-0 z-40 cursor-default"
         />
       ) : null}
 
       <aside
         aria-label="Menu"
         className={cn(
-          "fixed right-4 top-[68px] z-40 w-56 origin-top-right rounded-2xl bg-[#0e1a3a] p-2 shadow-card",
+          "absolute right-4 top-[68px] z-40 w-56 origin-top-right rounded-2xl bg-[#0e1a3a] p-2 shadow-card",
           "transition-all duration-150 ease-out",
           isMenuOpen ? "scale-100 opacity-100" : "pointer-events-none scale-95 opacity-0",
         )}

@@ -12,9 +12,9 @@ export function RentalVehicleCard({ vehicle }: { vehicle: RentalVehicle }) {
 
   return (
     <Card interactive>
-      <div className="grid gap-0 sm:grid-cols-[10rem_1fr]">
+      <div className="grid gap-0">
         <div
-          className="relative flex h-32 items-end overflow-hidden p-3 text-white sm:h-auto"
+          className="relative flex h-32 items-end overflow-hidden p-3 text-white"
           style={{ backgroundImage: vehicle.cover_photo_url ? undefined : GRADIENT }}
         >
           {vehicle.cover_photo_url ? (

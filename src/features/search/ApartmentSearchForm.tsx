@@ -165,13 +165,13 @@ export function ApartmentSearchForm({
 
   return (
     <form onSubmit={submit} noValidate aria-label="Rechercher un appartement">
-      <div className="grid gap-3 md:grid-cols-[1.2fr_1fr_1fr_9rem_auto] md:items-end">
+      <div className="grid gap-3">
         {destinationField}
         {checkInField}
         {checkOutField}
         <GuestStepper value={guests} onChange={setGuests} />
 
-        <Button type="submit" size="lg" icon={<IconSearch className="h-4 w-4" />} className="w-full md:w-auto">
+        <Button type="submit" size="lg" icon={<IconSearch className="h-4 w-4" />} className="w-full">
           Rechercher
         </Button>
       </div>

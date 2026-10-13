@@ -162,7 +162,7 @@ export function BookingFlow({ tripId, passengers: initialPassengers }: { tripId:
         }
       />
 
-      <form onSubmit={submit} noValidate className="grid gap-6 lg:grid-cols-[1fr_22rem]">
+      <form onSubmit={submit} noValidate className="grid gap-6">
         <div className="space-y-6">
           {step === "options" ? (
             <Card>
