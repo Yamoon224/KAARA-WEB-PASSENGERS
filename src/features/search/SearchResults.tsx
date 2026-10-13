@@ -11,7 +11,7 @@ import { useAsyncData } from "@kaara/shared/hooks/useAsyncData";
 import { cn } from "@kaara/shared/lib/cn";
 import { formatDayCompact, formatNumber, formatWeekdayShort, todayIso } from "@kaara/shared/lib/format";
 import { tripService } from "@/services";
-import { isPilotLine } from "./pilot-line";
+import { isAirportTransfer, isPilotLine } from "./pilot-line";
 import { RouteGridResults } from "./RouteGridResults";
 import { TripCard } from "./TripCard";
 import { searchHref } from "./TripSearchForm";
@@ -27,13 +27,13 @@ function shiftDate(isoDate: string, days: number): string {
 /**
  * Resultats de recherche.
  *
- * Seule la ligne pilote se reserve en ligne : toute autre liaison affiche sa
- * fiche de la grille des trajets, avec « Bientot disponible ». Le choix se
- * fait ici, avant tout appel, pour ne pas interroger des departs que le
- * voyageur ne pourra pas reserver.
+ * Seules la ligne pilote et le corridor Aeroexpress se reservent en ligne :
+ * toute autre liaison affiche sa fiche de la grille des trajets, avec
+ * « Bientot disponible ». Le choix se fait ici, avant tout appel, pour ne pas
+ * interroger des departs que le voyageur ne pourra pas reserver.
  */
 export function SearchResults({ criteria }: { criteria: SearchCriteria }) {
-  return isPilotLine(criteria.origin, criteria.destination) ? (
+  return isPilotLine(criteria.origin, criteria.destination) || isAirportTransfer(criteria.origin, criteria.destination) ? (
     <BookableTripResults criteria={criteria} />
   ) : (
     <RouteGridResults criteria={criteria} />

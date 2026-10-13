@@ -320,9 +320,9 @@ function PassengerStepper({ value, onChange }: { value: number; onChange: (value
 /**
  * Compteur de voyageurs affiche dans le modal ouvert depuis le formulaire
  * mobile : un champ compact dans le formulaire, un choix confortable au pouce
- * une fois ouvert.
+ * une fois ouvert. Exporte : reutilise tel quel par `AirportTransferSearchForm`.
  */
-function PassengerCounter({ value, onChange }: { value: number; onChange: (value: number) => void }) {
+export function PassengerCounter({ value, onChange }: { value: number; onChange: (value: number) => void }) {
   const max = config.maxPassengersOnline;
 
   return (

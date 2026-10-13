@@ -3,21 +3,12 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Logo } from "@kaara/shared/components/brand/Logo";
-import { ThemeToggle } from "@kaara/shared/components/theme/ThemeToggle";
 import { Avatar, LinkButton } from "@kaara/shared/components/ui";
-import { IconChevronDown, IconHeart, IconMenu, IconUser } from "@kaara/shared/components/ui/icons";
+import { IconHeart, IconMenu, IconUser } from "@kaara/shared/components/ui/icons";
 import { useAuth } from "@kaara/shared/features/auth/AuthContext";
 import { useInfoModal } from "@/features/info-modal/InfoModalProvider";
 import { cn } from "@kaara/shared/lib/cn";
-import { HELP_LINKS, PARTNER_LINKS, SERVICE_LINKS, TRAVELER_LINKS } from "./menuLinks";
-import type { MenuItem } from "./menuLinks";
-
-const NAV_CATEGORIES: Array<{ id: string; heading: string; items: MenuItem[] }> = [
-  { id: "services", heading: "Nos services", items: SERVICE_LINKS },
-  { id: "voyageurs", heading: "Voyageurs", items: TRAVELER_LINKS },
-  { id: "partenaires", heading: "Partenaires", items: PARTNER_LINKS },
-  { id: "aide", heading: "Aide", items: HELP_LINKS },
-];
+import { SERVICE_LINKS } from "./menuLinks";
 
 /** "Actif" en cyan pour ce qui est vraiment reservable en ligne, "Bientôt" en gris pour le reste. */
 function MenuBadge({ badge }: { badge?: string }) {
@@ -34,64 +25,38 @@ function MenuBadge({ badge }: { badge?: string }) {
   );
 }
 
-/** Une section repliable du tiroir : toutes ouvertes par defaut, comme le reste du menu tient sur un seul ecran. */
-function NavCategory({
-  heading,
-  items,
-  isOpen,
-  onToggle,
-  onNavigate,
-}: {
-  heading: string;
-  items: MenuItem[];
-  isOpen: boolean;
-  onToggle: () => void;
-  onNavigate: () => void;
-}) {
+/** Liste des services : seul contenu du menu burger, un petit popover et non plus un tiroir plein ecran. */
+function ServiceList({ onNavigate }: { onNavigate: () => void }) {
   const { openInfo } = useInfoModal();
 
   return (
-    <div className="border-b border-white/10 py-1">
-      <button
-        type="button"
-        onClick={onToggle}
-        aria-expanded={isOpen}
-        className="flex w-full items-center justify-between px-3 py-2.5 text-left text-sm font-bold text-white"
-      >
-        {heading}
-        <IconChevronDown className={cn("h-3.5 w-3.5 text-white/50 transition-transform", isOpen ? "rotate-180" : "")} />
-      </button>
-
-      {isOpen ? (
-        <ul className="flex flex-col gap-0.5 pb-2">
-          {items.map((item) =>
-            item.kind === "link" ? (
-              <li key={item.label}>
-                <Link
-                  href={item.href}
-                  onClick={onNavigate}
-                  className="flex items-center justify-between gap-2 rounded-sm px-3 py-2 text-sm text-white/70 hover:bg-white/10"
-                >
-                  {item.label}
-                  <MenuBadge badge={item.badge} />
-                </Link>
-              </li>
-            ) : (
-              <li key={item.label}>
-                <button
-                  type="button"
-                  onClick={() => openInfo(item.title, item.text)}
-                  className="flex w-full items-center justify-between gap-2 rounded-sm px-3 py-2 text-left text-sm text-white/70 hover:bg-white/10"
-                >
-                  {item.label}
-                  <MenuBadge badge={item.badge} />
-                </button>
-              </li>
-            ),
-          )}
-        </ul>
-      ) : null}
-    </div>
+    <ul className="flex flex-col gap-0.5">
+      {SERVICE_LINKS.map((item) =>
+        item.kind === "link" ? (
+          <li key={item.label}>
+            <Link
+              href={item.href}
+              onClick={onNavigate}
+              className="flex items-center justify-between gap-2 rounded-lg px-3 py-2 text-sm text-white/70 hover:bg-white/10"
+            >
+              {item.label}
+              <MenuBadge badge={item.badge} />
+            </Link>
+          </li>
+        ) : (
+          <li key={item.label}>
+            <button
+              type="button"
+              onClick={() => openInfo(item.title, item.text)}
+              className="flex w-full items-center justify-between gap-2 rounded-lg px-3 py-2 text-left text-sm text-white/70 hover:bg-white/10"
+            >
+              {item.label}
+              <MenuBadge badge={item.badge} />
+            </button>
+          </li>
+        ),
+      )}
+    </ul>
   );
 }
 
@@ -99,23 +64,16 @@ function NavCategory({
  * En-tete du site voyageur : logo, connexion, menu. Rien d'autre.
  *
  * Chaque lien de plus dans cette barre est un lien de moins de large pour le
- * titre en dessous, sur un telephone tenu d'une main. Tout le secondaire
- * (theme, mes billets, compte) vit donc dans le tiroir lateral ouvert par le
- * bouton burger, jamais ici.
+ * titre en dessous, sur un telephone tenu d'une main. Le bouton burger
+ * n'ouvre plus qu'un petit popover listant les services (Bus/Car,
+ * Appartements...) ; tout le reste (theme, compte) vit ailleurs dans le site.
  */
 export function SiteHeader() {
   const { user } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [openCategories, setOpenCategories] = useState<string[]>(NAV_CATEGORIES.map((category) => category.id));
 
   function closeMenu() {
     setIsMenuOpen(false);
-  }
-
-  function toggleCategory(id: string) {
-    setOpenCategories((current) =>
-      current.includes(id) ? current.filter((openId) => openId !== id) : [...current, id],
-    );
   }
 
   return (
@@ -178,79 +136,27 @@ export function SiteHeader() {
         <span aria-hidden="true" className="grad-brand block h-1 w-full" />
       </header>
 
-      {/* Tiroir lateral : theme, mes billets, compte - tout ce qui n'est pas
-          l'action principale de l'en-tete.
-          Demarre sous l'en-tete (top-[69px] = hauteur de la barre + son
-          filet degrade + sa bordure) plutot qu'en haut de l'ecran : le logo,
-          « Se connecter » (et le coeur sur ecran large) restent visibles et cliquables meme
-          menu ouvert. */}
+      {/* Petit popover des services, ancre sous le bouton burger : plus un
+          tiroir plein ecran, juste la liste "Nos services". Le reste
+          (connexion, favoris) reste accessible directement dans l'en-tete. */}
       {isMenuOpen ? (
         <button
           type="button"
           aria-label="Fermer le menu"
           onClick={closeMenu}
-          className="fixed inset-x-0 top-[69px] bottom-0 z-40 bg-stone-950/50"
+          className="fixed inset-0 z-40 cursor-default"
         />
       ) : null}
 
       <aside
         aria-label="Menu"
         className={cn(
-          "fixed right-0 top-[69px] bottom-0 z-40 flex w-[85vw] max-w-xs flex-col bg-[#0e1a3a] shadow-card",
-          "transition-transform duration-200 ease-out",
-          isMenuOpen ? "translate-x-0" : "translate-x-full",
+          "fixed right-4 top-[68px] z-40 w-56 origin-top-right rounded-2xl bg-[#0e1a3a] p-2 shadow-card",
+          "transition-all duration-150 ease-out",
+          isMenuOpen ? "scale-100 opacity-100" : "pointer-events-none scale-95 opacity-0",
         )}
       >
-        <div className="shrink-0 px-5 pb-2 pt-6">
-          <span className="text-[28px] font-extrabold leading-none tracking-tight text-white">
-            Ka<span className="text-brand-300">ara</span>
-          </span>
-        </div>
-
-        <nav aria-label="Navigation" className="flex-1 overflow-y-auto p-3">
-          <div>
-            {NAV_CATEGORIES.map((category) => (
-              <NavCategory
-                key={category.id}
-                heading={category.heading}
-                items={category.items}
-                isOpen={openCategories.includes(category.id)}
-                onToggle={() => toggleCategory(category.id)}
-                onNavigate={closeMenu}
-              />
-            ))}
-          </div>
-
-          <div className="mt-5 border-t border-white/10 pt-5">
-            <p className="px-3 pb-2 text-[10px] font-bold uppercase tracking-[0.14em] text-white/50">Apparence</p>
-            <div className="px-3">
-              <ThemeToggle showLabels />
-            </div>
-          </div>
-        </nav>
-
-        <div className="shrink-0 border-t border-white/10 p-3">
-          {user ? (
-            <LinkButton
-              href="/my-tickets"
-              variant="outline"
-              className="w-full"
-              icon={<IconUser className="h-4 w-4" />}
-              onClick={closeMenu}
-            >
-              Mon espace
-            </LinkButton>
-          ) : (
-            <div className="flex flex-col gap-2">
-              <LinkButton href="/login" variant="brand" className="w-full" onClick={closeMenu}>
-                Se connecter
-              </LinkButton>
-              <LinkButton href="/register" variant="outline" className="w-full" onClick={closeMenu}>
-                Creer un compte
-              </LinkButton>
-            </div>
-          )}
-        </div>
+        <ServiceList onNavigate={closeMenu} />
       </aside>
     </>
   );

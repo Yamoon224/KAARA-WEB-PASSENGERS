@@ -11,3 +11,13 @@ export function isPilotLine(origin: string, destination: string): boolean {
 
   return (origin === a && destination === b) || (origin === b && destination === a);
 }
+
+/**
+ * Vrai pour le corridor Aeroexpress, dans un seul sens (vers l'aeroport) :
+ * contrairement a la ligne pilote, il n'y a pas encore de retour reservable.
+ */
+export function isAirportTransfer(origin: string, destination: string): boolean {
+  const { origin: a, destination: b } = config.airportTransfer;
+
+  return origin === a && destination === b;
+}

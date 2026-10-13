@@ -27,9 +27,9 @@ export function PopularApartments() {
 
   if (isLoading) {
     return (
-      <div className="flex gap-3 overflow-x-auto pb-1 sm:grid sm:grid-cols-2 sm:gap-4 sm:overflow-visible lg:grid-cols-4">
+      <div className="flex gap-3 overflow-x-auto pb-1">
         {[0, 1, 2, 3].map((index) => (
-          <Skeleton key={index} className="h-36 w-[15rem] shrink-0 rounded-sm sm:w-auto" />
+          <Skeleton key={index} className="h-36 w-[15rem] shrink-0 rounded-sm" />
         ))}
       </div>
     );
@@ -39,11 +39,11 @@ export function PopularApartments() {
   if (apartments.length === 0) return null;
 
   return (
-    <div className="flex gap-3 overflow-x-auto pb-1 sm:grid sm:grid-cols-2 sm:gap-4 sm:overflow-visible lg:grid-cols-4">
+    <div className="flex gap-3 overflow-x-auto pb-1">
       {apartments.map((apartment, index) => (
         <div
           key={apartment.id}
-          className="relative w-[15rem] shrink-0 overflow-hidden rounded-sm shadow-card sm:w-auto"
+          className="relative w-[15rem] shrink-0 overflow-hidden rounded-sm shadow-card"
           style={{ backgroundImage: GRADIENTS[index % GRADIENTS.length] }}
         >
           <div className="flex h-36 flex-col justify-between p-4 text-white">
