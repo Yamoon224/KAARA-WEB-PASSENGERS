@@ -1,10 +1,10 @@
 "use client";
 
 import { useCallback } from "react";
-import { Card, CardBody, EmptyState, ErrorState, Skeleton } from "@kaara/shared/components/ui";
-import { IconCar } from "@kaara/shared/components/ui/icons";
-import { useAsyncData } from "@kaara/shared/hooks/useAsyncData";
-import { formatDayShort } from "@kaara/shared/lib/format";
+import { Card, CardBody, EmptyState, ErrorState, Skeleton } from "@/shared/components/ui";
+import { IconCar } from "@/shared/components/ui/icons";
+import { useAsyncData } from "@/shared/hooks/useAsyncData";
+import { formatDayShort } from "@/shared/lib/format";
 import { rentalVehicleService, tripService } from "@/services";
 import { RentalVehicleCard } from "./RentalVehicleCard";
 import { RentalVehicleSearchForm } from "./RentalVehicleSearchForm";

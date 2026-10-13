@@ -1,11 +1,11 @@
 "use client";
 
 import { useCallback } from "react";
-import { IconHeart } from "@kaara/shared/components/ui/icons";
-import { useAuth } from "@kaara/shared/features/auth/AuthContext";
-import { useAsyncData } from "@kaara/shared/hooks/useAsyncData";
-import { useMutation } from "@kaara/shared/hooks/useMutation";
-import { cn } from "@kaara/shared/lib/cn";
+import { IconHeart } from "@/shared/components/ui/icons";
+import { useAuth } from "@/shared/features/auth/AuthContext";
+import { useAsyncData } from "@/shared/hooks/useAsyncData";
+import { useMutation } from "@/shared/hooks/useMutation";
+import { cn } from "@/shared/lib/cn";
 import { favoriteService } from "@/services";
 
 /**

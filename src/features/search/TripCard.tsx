@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { Badge, Card } from "@kaara/shared/components/ui";
-import { IconHeadphones, IconSeat, IconWifi } from "@kaara/shared/components/ui/icons";
-import { formatDuration, formatMoney, formatTime } from "@kaara/shared/lib/format";
-import { pseudoRating } from "@kaara/shared/lib/rating";
-import type { Trip } from "@kaara/shared/types/api";
+import { Badge, Card } from "@/shared/components/ui";
+import { IconHeadphones, IconSeat, IconWifi } from "@/shared/components/ui/icons";
+import { formatDuration, formatMoney, formatTime } from "@/shared/lib/format";
+import { pseudoRating } from "@/shared/lib/rating";
+import type { Trip } from "@/shared/types/api";
 
 /**
  * Un depart dans la liste de resultats.

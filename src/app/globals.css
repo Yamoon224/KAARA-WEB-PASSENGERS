@@ -1,8 +1,2 @@
 @import "tailwindcss";
-@import "../../../shared/styles/theme.css";
-
-/*
- * Les composants partages vivent hors de ce projet : sans cette ligne,
- * Tailwind ne verrait pas leurs classes et ne les genererait pas.
- */
-@source "../../../shared";
+@import "../styles/theme.css";

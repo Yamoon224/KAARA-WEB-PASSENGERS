@@ -3,10 +3,10 @@
 import Link from "next/link";
 import { useState } from "react";
 import type { FormEvent } from "react";
-import { Button, FormAlert } from "@kaara/shared/components/ui";
-import { AuthInput, LoginCard, LoginShell, SuccessPanel, useLoginSubmit } from "@kaara/shared/features/auth/LoginScreen";
-import { cn } from "@kaara/shared/lib/cn";
-import type { AuthenticatedUser } from "@kaara/shared/types/api";
+import { Button, FormAlert } from "@/shared/components/ui";
+import { AuthInput, LoginCard, LoginShell, SuccessPanel, useLoginSubmit } from "@/shared/features/auth/LoginScreen";
+import { cn } from "@/shared/lib/cn";
+import type { AuthenticatedUser } from "@/shared/types/api";
 
 /**
  * Le site voyageur n'ouvre de session qu'aux comptes voyageurs. Compagnies,

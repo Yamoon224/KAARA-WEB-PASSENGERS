@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { RentalVehicleResults } from "@/features/search/RentalVehicleResults";
-import { todayIso } from "@kaara/shared/lib/format";
+import { todayIso } from "@/shared/lib/format";
 
 export const metadata: Metadata = { title: "Vehicules de location disponibles" };
 

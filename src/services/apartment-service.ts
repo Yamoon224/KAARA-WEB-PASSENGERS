@@ -1,6 +1,6 @@
-import { apiFetch } from "@kaara/shared/lib/api-client";
-import type { ReadOptions } from "@kaara/shared/lib/api-client";
-import type { Apartment, Paginated } from "@kaara/shared/types/api";
+import { apiFetch } from "@/shared/lib/api-client";
+import type { ReadOptions } from "@/shared/lib/api-client";
+import type { Apartment, Paginated } from "@/shared/types/api";
 
 export interface ApartmentSearchParams {
   city_id?: string;

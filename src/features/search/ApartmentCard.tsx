@@ -1,7 +1,7 @@
-import { Badge, Card } from "@kaara/shared/components/ui";
-import { IconChat, IconMapPin, IconPhone, IconUsers } from "@kaara/shared/components/ui/icons";
-import { formatMoney } from "@kaara/shared/lib/format";
-import type { Apartment } from "@kaara/shared/types/api";
+import { Badge, Card } from "@/shared/components/ui";
+import { IconChat, IconMapPin, IconPhone, IconUsers } from "@/shared/components/ui/icons";
+import { formatMoney } from "@/shared/lib/format";
+import type { Apartment } from "@/shared/types/api";
 
 const GRADIENT = "linear-gradient(150deg,#2F9E68 0%,#1F7A4D 100%)";
 

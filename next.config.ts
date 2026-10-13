@@ -1,4 +1,3 @@
-import path from "node:path";
 import type { NextConfig } from "next";
 
 /**
@@ -13,17 +12,9 @@ import type { NextConfig } from "next";
  */
 const isVercelBuild = Boolean(process.env.VERCEL);
 
-/** Racine du monorepo (`web/`) : le code partage (`shared/`) vit hors du dossier du projet. */
-const workspaceRoot = path.join(__dirname, "..");
-
 const nextConfig: NextConfig = {
   distDir:
     process.env.NODE_ENV === "production" && !isVercelBuild ? ".next-build" : ".next",
-
-  // `@kaara/shared` est livre en TypeScript brut : c'est ce projet qui le compile.
-  transpilePackages: ["@kaara/shared"],
-  turbopack: { root: workspaceRoot },
-  outputFileTracingRoot: workspaceRoot,
 
   // Les QR codes des billets sont servis par l'API Laravel en SVG : ils
   // passent par une balise <img> ordinaire, sans optimisation d'image.

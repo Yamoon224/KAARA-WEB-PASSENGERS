@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { IconCalendar, IconHeart, IconSearch, IconUser } from "@kaara/shared/components/ui/icons";
-import { cn } from "@kaara/shared/lib/cn";
+import { IconCalendar, IconHeart, IconSearch, IconUser } from "@/shared/components/ui/icons";
+import { cn } from "@/shared/lib/cn";
 
 const TABS = [
   { href: "/", label: "Recherche", icon: IconSearch },

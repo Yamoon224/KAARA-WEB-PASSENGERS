@@ -1,5 +1,5 @@
-import { apiFetch, CACHE } from "@kaara/shared/lib/api-client";
-import type { RouteGridEntry } from "@kaara/shared/types/api";
+import { apiFetch, CACHE } from "@/shared/lib/api-client";
+import type { RouteGridEntry } from "@/shared/types/api";
 
 /**
  * Lignes actives d'une liaison pas encore reservable en ligne, de la moins

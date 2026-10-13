@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { cn } from "@kaara/shared/lib/cn";
+import { cn } from "@/shared/lib/cn";
 
 export type Pillar = "bus" | "appartements" | "location-auto" | "aeroexpress";
 

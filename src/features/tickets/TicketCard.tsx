@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element -- QR code SVG servi par l'API, sans optimisation d'image */
-import { Badge } from "@kaara/shared/components/ui";
-import { formatDayShort, formatMoney, formatTime } from "@kaara/shared/lib/format";
-import { TICKET_TONE } from "@kaara/shared/lib/labels";
+import { Badge } from "@/shared/components/ui";
+import { formatDayShort, formatMoney, formatTime } from "@/shared/lib/format";
+import { TICKET_TONE } from "@/shared/lib/labels";
 import { bookingService } from "@/services";
-import type { Ticket, Trip } from "@kaara/shared/types/api";
+import type { Ticket, Trip } from "@/shared/types/api";
 
 /**
  * Billet electronique.

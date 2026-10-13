@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { ApartmentResults } from "@/features/search/ApartmentResults";
-import { todayIso } from "@kaara/shared/lib/format";
+import { todayIso } from "@/shared/lib/format";
 
 export const metadata: Metadata = { title: "Appartements disponibles" };
 

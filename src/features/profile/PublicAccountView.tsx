@@ -2,10 +2,10 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Button, LinkButton, LoadingState } from "@kaara/shared/components/ui";
-import { IconLogout, IconUser } from "@kaara/shared/components/ui/icons";
-import { useAuth } from "@kaara/shared/features/auth/AuthContext";
-import { ProfileView } from "@kaara/shared/features/profile/ProfileView";
+import { Button, LinkButton, LoadingState } from "@/shared/components/ui";
+import { IconLogout, IconUser } from "@/shared/components/ui/icons";
+import { useAuth } from "@/shared/features/auth/AuthContext";
+import { ProfileView } from "@/shared/features/profile/ProfileView";
 
 /**
  * Page compte du site voyageur : identite, mot de passe, theme,

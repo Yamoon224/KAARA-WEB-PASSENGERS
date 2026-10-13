@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
-import { ThemeProvider } from "@kaara/shared/components/theme/ThemeProvider";
-import { ThemeScript } from "@kaara/shared/components/theme/theme-script";
-import { AuthProvider } from "@kaara/shared/features/auth/AuthContext";
+import { ThemeProvider } from "@/shared/components/theme/ThemeProvider";
+import { ThemeScript } from "@/shared/components/theme/theme-script";
+import { AuthProvider } from "@/shared/features/auth/AuthContext";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({

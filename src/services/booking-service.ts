@@ -1,5 +1,5 @@
-import { apiFetch, buildUrl } from "@kaara/shared/lib/api-client";
-import type { Booking, ListParams, MobileMoneyProvider, Paginated, PassengerInput, Payment, Single } from "@kaara/shared/types/api";
+import { apiFetch, buildUrl } from "@/shared/lib/api-client";
+import type { Booking, ListParams, MobileMoneyProvider, Paginated, PassengerInput, Payment, Single } from "@/shared/types/api";
 
 export interface BookingInput {
   trip_id: string;

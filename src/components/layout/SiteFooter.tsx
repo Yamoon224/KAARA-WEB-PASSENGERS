@@ -1,6 +1,6 @@
 "use client";
 
-import { IconFacebook, IconGithub, IconInstagram } from "@kaara/shared/components/ui/icons";
+import { IconFacebook, IconGithub, IconInstagram } from "@/shared/components/ui/icons";
 import { useInfoModal } from "@/features/info-modal/InfoModalProvider";
 import { HELP_LINKS, PARTNER_LINKS, TRAVELER_LINKS } from "./menuLinks";
 import type { MenuInfoItem } from "./menuLinks";

@@ -3,13 +3,13 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback } from "react";
-import { Card, CardBody, EmptyState, ErrorState, Skeleton } from "@kaara/shared/components/ui";
-import { IconBus } from "@kaara/shared/components/ui/icons";
+import { Card, CardBody, EmptyState, ErrorState, Skeleton } from "@/shared/components/ui";
+import { IconBus } from "@/shared/components/ui/icons";
 import { BookingStepper } from "@/features/booking/BookingStepper";
 import { FavoriteButton } from "@/features/favorites/FavoriteButton";
-import { useAsyncData } from "@kaara/shared/hooks/useAsyncData";
-import { config } from "@kaara/shared/lib/config";
-import { formatDayCompact, formatWeekdayShort } from "@kaara/shared/lib/format";
+import { useAsyncData } from "@/shared/hooks/useAsyncData";
+import { config } from "@/shared/lib/config";
+import { formatDayCompact, formatWeekdayShort } from "@/shared/lib/format";
 import { routeGridService, tripService } from "@/services";
 import { RouteGridCard } from "./RouteGridCard";
 import { searchHref } from "./TripSearchForm";

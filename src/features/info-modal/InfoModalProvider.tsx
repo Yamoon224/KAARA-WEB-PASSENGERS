@@ -2,7 +2,7 @@
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import type { ReactNode } from "react";
-import { IconClose } from "@kaara/shared/components/ui/icons";
+import { IconClose } from "@/shared/components/ui/icons";
 
 interface InfoModalContextValue {
   openInfo: (title: string, text: string) => void;

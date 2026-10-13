@@ -1,7 +1,7 @@
-import { Card } from "@kaara/shared/components/ui";
-import { IconClock } from "@kaara/shared/components/ui/icons";
-import { formatDuration, formatMoney } from "@kaara/shared/lib/format";
-import type { RouteGridEntry } from "@kaara/shared/types/api";
+import { Card } from "@/shared/components/ui";
+import { IconClock } from "@/shared/components/ui/icons";
+import { formatDuration, formatMoney } from "@/shared/lib/format";
+import type { RouteGridEntry } from "@/shared/types/api";
 
 /**
  * Une ligne de la grille des trajets, pour une liaison pas encore reservable.

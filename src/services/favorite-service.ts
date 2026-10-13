@@ -1,5 +1,5 @@
-import { apiFetch, CACHE } from "@kaara/shared/lib/api-client";
-import type { Favorite, Single } from "@kaara/shared/types/api";
+import { apiFetch, CACHE } from "@/shared/lib/api-client";
+import type { Favorite, Single } from "@/shared/types/api";
 
 /**
  * Trajets favoris du voyageur connecte.

@@ -3,10 +3,10 @@
 import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
 import type { FormEvent } from "react";
-import { Button, Modal, SelectField, TextField } from "@kaara/shared/components/ui";
-import { IconCalendar, IconMinus, IconPlus, IconSearch, IconUsers } from "@kaara/shared/components/ui/icons";
-import { useAsyncData } from "@kaara/shared/hooks/useAsyncData";
-import { todayIso } from "@kaara/shared/lib/format";
+import { Button, Modal, SelectField, TextField } from "@/shared/components/ui";
+import { IconCalendar, IconMinus, IconPlus, IconSearch, IconUsers } from "@/shared/components/ui/icons";
+import { useAsyncData } from "@/shared/hooks/useAsyncData";
+import { todayIso } from "@/shared/lib/format";
 import { tripService } from "@/services";
 
 export interface ApartmentSearchCriteria {

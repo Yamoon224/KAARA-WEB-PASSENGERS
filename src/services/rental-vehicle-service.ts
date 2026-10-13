@@ -1,6 +1,6 @@
-import { apiFetch } from "@kaara/shared/lib/api-client";
-import type { ReadOptions } from "@kaara/shared/lib/api-client";
-import type { Paginated, RentalVehicle, RentalVehicleCategory } from "@kaara/shared/types/api";
+import { apiFetch } from "@/shared/lib/api-client";
+import type { ReadOptions } from "@/shared/lib/api-client";
+import type { Paginated, RentalVehicle, RentalVehicleCategory } from "@/shared/types/api";
 
 export interface RentalVehicleSearchParams {
   city_id?: string;

@@ -1,8 +1,8 @@
 import { useId } from "react";
 import type { InputHTMLAttributes, ReactNode } from "react";
-import { cn } from "@kaara/shared/lib/cn";
-import { formatDayCompact, formatTime } from "@kaara/shared/lib/format";
-import type { Trip } from "@kaara/shared/types/api";
+import { cn } from "@/shared/lib/cn";
+import { formatDayCompact, formatTime } from "@/shared/lib/format";
+import type { Trip } from "@/shared/types/api";
 
 export interface Traveler {
   lastName: string;

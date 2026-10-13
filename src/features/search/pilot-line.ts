@@ -1,4 +1,4 @@
-import { config } from "@kaara/shared/lib/config";
+import { config } from "@/shared/lib/config";
 
 /**
  * Vrai pour la ligne pilote, dans les deux sens.

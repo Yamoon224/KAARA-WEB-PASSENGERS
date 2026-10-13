@@ -4,10 +4,10 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import type { FormEvent } from "react";
-import { Button, FormAlert } from "@kaara/shared/components/ui";
-import { ApiError, errorMessage } from "@kaara/shared/lib/api-client";
-import { useAuth } from "@kaara/shared/features/auth/AuthContext";
-import { AuthInput, SuccessPanel } from "@kaara/shared/features/auth/LoginScreen";
+import { Button, FormAlert } from "@/shared/components/ui";
+import { ApiError, errorMessage } from "@/shared/lib/api-client";
+import { useAuth } from "@/shared/features/auth/AuthContext";
+import { AuthInput, SuccessPanel } from "@/shared/features/auth/LoginScreen";
 
 /**
  * Inscription d'un voyageur. Le role n'est jamais choisi ici : il est impose

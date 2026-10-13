@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import { useCallback } from "react";
-import { Card, EmptyState, ErrorState, LinkButton, LoadingState } from "@kaara/shared/components/ui";
-import { IconArrowRight, IconHeart, IconTrash } from "@kaara/shared/components/ui/icons";
-import { useAuth } from "@kaara/shared/features/auth/AuthContext";
+import { Card, EmptyState, ErrorState, LinkButton, LoadingState } from "@/shared/components/ui";
+import { IconArrowRight, IconHeart, IconTrash } from "@/shared/components/ui/icons";
+import { useAuth } from "@/shared/features/auth/AuthContext";
 import { searchHref } from "@/features/search/TripSearchForm";
-import { useAsyncData } from "@kaara/shared/hooks/useAsyncData";
-import { useMutation } from "@kaara/shared/hooks/useMutation";
-import { todayIso } from "@kaara/shared/lib/format";
+import { useAsyncData } from "@/shared/hooks/useAsyncData";
+import { useMutation } from "@/shared/hooks/useMutation";
+import { todayIso } from "@/shared/lib/format";
 import { favoriteService } from "@/services";
 
 /**

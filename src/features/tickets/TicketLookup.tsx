@@ -4,12 +4,12 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
 import type { FormEvent } from "react";
-import { Badge, Button, Card, CardBody, CardHeader, EmptyState, LoadingState, TextField } from "@kaara/shared/components/ui";
-import { IconArrowRight, IconSearch, IconTicket } from "@kaara/shared/components/ui/icons";
-import { useAuth } from "@kaara/shared/features/auth/AuthContext";
-import { useAsyncData } from "@kaara/shared/hooks/useAsyncData";
-import { formatDayShort, formatMoney, formatTime } from "@kaara/shared/lib/format";
-import { BOOKING_TONE } from "@kaara/shared/lib/labels";
+import { Badge, Button, Card, CardBody, CardHeader, EmptyState, LoadingState, TextField } from "@/shared/components/ui";
+import { IconArrowRight, IconSearch, IconTicket } from "@/shared/components/ui/icons";
+import { useAuth } from "@/shared/features/auth/AuthContext";
+import { useAsyncData } from "@/shared/hooks/useAsyncData";
+import { formatDayShort, formatMoney, formatTime } from "@/shared/lib/format";
+import { BOOKING_TONE } from "@/shared/lib/labels";
 import { bookingService } from "@/services";
 
 /**

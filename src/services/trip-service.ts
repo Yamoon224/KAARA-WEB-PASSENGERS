@@ -1,7 +1,7 @@
-import { apiFetch, CACHE } from "@kaara/shared/lib/api-client";
-import type { CityRef, Trip } from "@kaara/shared/types/api";
+import { apiFetch, CACHE } from "@/shared/lib/api-client";
+import type { CityRef, Trip } from "@/shared/types/api";
 
-export { seatMap } from "@kaara/shared/services/trip-service";
+export { seatMap } from "@/shared/services/trip-service";
 
 export interface TripSearchParams {
   origin: string;

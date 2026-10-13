@@ -2,12 +2,12 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Logo } from "@kaara/shared/components/brand/Logo";
-import { Avatar, LinkButton } from "@kaara/shared/components/ui";
-import { IconHeart, IconMenu, IconUser } from "@kaara/shared/components/ui/icons";
-import { useAuth } from "@kaara/shared/features/auth/AuthContext";
+import { Logo } from "@/shared/components/brand/Logo";
+import { Avatar, LinkButton } from "@/shared/components/ui";
+import { IconHeart, IconMenu, IconUser } from "@/shared/components/ui/icons";
+import { useAuth } from "@/shared/features/auth/AuthContext";
 import { useInfoModal } from "@/features/info-modal/InfoModalProvider";
-import { cn } from "@kaara/shared/lib/cn";
+import { cn } from "@/shared/lib/cn";
 import { SERVICE_LINKS } from "./menuLinks";
 
 /** "Actif" en cyan pour ce qui est vraiment reservable en ligne, "Bientôt" en gris pour le reste. */

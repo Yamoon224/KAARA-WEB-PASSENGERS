@@ -3,10 +3,10 @@
 import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
 import type { FormEvent } from "react";
-import { Button, Modal } from "@kaara/shared/components/ui";
-import { useAsyncData } from "@kaara/shared/hooks/useAsyncData";
-import { config } from "@kaara/shared/lib/config";
-import { formatDayCompact, todayIso } from "@kaara/shared/lib/format";
+import { Button, Modal } from "@/shared/components/ui";
+import { useAsyncData } from "@/shared/hooks/useAsyncData";
+import { config } from "@/shared/lib/config";
+import { formatDayCompact, todayIso } from "@/shared/lib/format";
 import { tripService } from "@/services";
 import { PassengerCounter, searchHref } from "./TripSearchForm";
 

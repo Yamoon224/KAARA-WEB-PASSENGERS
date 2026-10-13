@@ -1,5 +1,5 @@
-import { IconArrowLeft } from "@kaara/shared/components/ui/icons";
-import { cn } from "@kaara/shared/lib/cn";
+import { IconArrowLeft } from "@/shared/components/ui/icons";
+import { cn } from "@/shared/lib/cn";
 
 const STEPS = [
   { key: "recherche", label: "Recherche" },

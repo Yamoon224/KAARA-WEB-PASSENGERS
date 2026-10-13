@@ -3,13 +3,13 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useCallback, useMemo } from "react";
-import { Card, CardBody, EmptyState, ErrorState, Skeleton } from "@kaara/shared/components/ui";
-import { IconBus, IconChevronLeft, IconChevronRight, IconSortAscending } from "@kaara/shared/components/ui/icons";
+import { Card, CardBody, EmptyState, ErrorState, Skeleton } from "@/shared/components/ui";
+import { IconBus, IconChevronLeft, IconChevronRight, IconSortAscending } from "@/shared/components/ui/icons";
 import { BookingStepper } from "@/features/booking/BookingStepper";
 import { FavoriteButton } from "@/features/favorites/FavoriteButton";
-import { useAsyncData } from "@kaara/shared/hooks/useAsyncData";
-import { cn } from "@kaara/shared/lib/cn";
-import { formatDayCompact, formatNumber, formatWeekdayShort, todayIso } from "@kaara/shared/lib/format";
+import { useAsyncData } from "@/shared/hooks/useAsyncData";
+import { cn } from "@/shared/lib/cn";
+import { formatDayCompact, formatNumber, formatWeekdayShort, todayIso } from "@/shared/lib/format";
 import { tripService } from "@/services";
 import { isAirportTransfer, isPilotLine } from "./pilot-line";
 import { RouteGridResults } from "./RouteGridResults";

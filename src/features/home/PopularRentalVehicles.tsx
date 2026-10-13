@@ -1,11 +1,11 @@
 "use client";
 
 import { useCallback } from "react";
-import { IconMapPin, IconUsers } from "@kaara/shared/components/ui/icons";
-import { Skeleton } from "@kaara/shared/components/ui";
-import { useAsyncData } from "@kaara/shared/hooks/useAsyncData";
-import { CACHE } from "@kaara/shared/lib/api-client";
-import { formatMoney } from "@kaara/shared/lib/format";
+import { IconMapPin, IconUsers } from "@/shared/components/ui/icons";
+import { Skeleton } from "@/shared/components/ui";
+import { useAsyncData } from "@/shared/hooks/useAsyncData";
+import { CACHE } from "@/shared/lib/api-client";
+import { formatMoney } from "@/shared/lib/format";
 import { rentalVehicleService } from "@/services";
 
 const GRADIENTS = [

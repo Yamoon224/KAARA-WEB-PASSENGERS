@@ -1,14 +1,14 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { Badge, Button, Card, CardBody, ErrorState, FormAlert, LinkButton, LoadingState } from "@kaara/shared/components/ui";
-import { IconCheckCircle, IconPrinter, IconSearch } from "@kaara/shared/components/ui/icons";
-import { useAsyncData } from "@kaara/shared/hooks/useAsyncData";
-import { ApiError } from "@kaara/shared/lib/api-client";
-import { formatDateTime, formatMoney } from "@kaara/shared/lib/format";
-import { BOOKING_TONE } from "@kaara/shared/lib/labels";
+import { Badge, Button, Card, CardBody, ErrorState, FormAlert, LinkButton, LoadingState } from "@/shared/components/ui";
+import { IconCheckCircle, IconPrinter, IconSearch } from "@/shared/components/ui/icons";
+import { useAsyncData } from "@/shared/hooks/useAsyncData";
+import { ApiError } from "@/shared/lib/api-client";
+import { formatDateTime, formatMoney } from "@/shared/lib/format";
+import { BOOKING_TONE } from "@/shared/lib/labels";
 import { bookingService } from "@/services";
-import type { Booking } from "@kaara/shared/types/api";
+import type { Booking } from "@/shared/types/api";
 import { BookingStepper } from "@/features/booking/BookingStepper";
 import { PaymentPanel } from "./PaymentPanel";
 import { TicketCard } from "./TicketCard";

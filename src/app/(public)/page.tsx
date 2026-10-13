@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
-import { Card, CardBody } from "@kaara/shared/components/ui";
-import { IconArrowRight, IconCard, IconClock, IconMapPin, IconPhone, IconQrCode, IconTicket, IconWifiOff } from "@kaara/shared/components/ui/icons";
-import { formatDuration, formatMoney } from "@kaara/shared/lib/format";
+import { Card, CardBody } from "@/shared/components/ui";
+import { IconArrowRight, IconCard, IconClock, IconMapPin, IconPhone, IconQrCode, IconTicket, IconWifiOff } from "@/shared/components/ui/icons";
+import { formatDuration, formatMoney } from "@/shared/lib/format";
 import { HeroCurves } from "@/features/home/HeroCurves";
 import { PillarTabs } from "@/features/home/PillarTabs";
 import type { Pillar } from "@/features/home/PillarTabs";

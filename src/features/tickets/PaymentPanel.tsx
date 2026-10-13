@@ -2,15 +2,15 @@
 
 import { useCallback, useEffect, useState } from "react";
 import type { FormEvent } from "react";
-import { Button, Card, CardBody, CardHeader, FormAlert, TextField } from "@kaara/shared/components/ui";
-import { IconCheck, IconClock, IconLock, IconWallet } from "@kaara/shared/components/ui/icons";
-import { useMutation } from "@kaara/shared/hooks/useMutation";
-import { errorMessage } from "@kaara/shared/lib/api-client";
-import { cn } from "@kaara/shared/lib/cn";
-import { formatMoney } from "@kaara/shared/lib/format";
-import { MOBILE_MONEY_PROVIDERS } from "@kaara/shared/lib/labels";
+import { Button, Card, CardBody, CardHeader, FormAlert, TextField } from "@/shared/components/ui";
+import { IconCheck, IconClock, IconLock, IconWallet } from "@/shared/components/ui/icons";
+import { useMutation } from "@/shared/hooks/useMutation";
+import { errorMessage } from "@/shared/lib/api-client";
+import { cn } from "@/shared/lib/cn";
+import { formatMoney } from "@/shared/lib/format";
+import { MOBILE_MONEY_PROVIDERS } from "@/shared/lib/labels";
 import { bookingService } from "@/services";
-import type { Booking, MobileMoneyProvider } from "@kaara/shared/types/api";
+import type { Booking, MobileMoneyProvider } from "@/shared/types/api";
 
 function useCountdown(expiresAt: string | null): number {
   const compute = useCallback(
